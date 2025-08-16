@@ -21,10 +21,10 @@ try:
             password = "",
             database = "alx_book_store"
         )
-    except mysql.connector.Error as e:
-        print(e)
-except mysql.connector.Error as i:
-    print(i)
+    except mysql.connector.Error:
+        print("connection error")
+except mysql.connector.Error:
+    print("connection errors")
 
 dbcursor.close()
 mydb.close()
