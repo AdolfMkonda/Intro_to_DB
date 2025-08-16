@@ -21,14 +21,14 @@ CREATE TABLE Customers (
 );
 
 CREATE TABLE Orders (
-    order_id PRIMARY KEY,
-    customer_id FOREIGN KEY REFERENCES Customers (customer_id),
+    order_id INT PRIMARY KEY,
+    customer_id FOREIGN KEY (customer_id) REFERENCES Customers (customer_id),
     order_date DATE,
 );
 
 CREATE TABLE Order_Details (
     orderdetailid PRIMARY KEY,
-    order_id FOREIGN KEY REFERENCES Orders (order_id),
-    book_id FOREIGN KEY REFERENCES Books (book_id),
+    order_id FOREIGN KEY (order_id) REFERENCES Orders (order_id),
+    book_id FOREIGN KEY (book_id) REFERENCES Books (book_id),
     quantity FLOAT
 );
