@@ -1,5 +1,5 @@
 import mysql.connector
-from mysql.connector import Error
+
 
 
 try:
@@ -21,9 +21,9 @@ try:
             password = "",
             database = "alx_book_store"
         )
-    except Error as e:
+    except mysql.connector.Error as e:
         print(e)
-except Error as i:
+except mysql.connector.Error as i:
     print(i)
 
 dbcursor.close()
